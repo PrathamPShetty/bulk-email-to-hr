@@ -1,6 +1,12 @@
-sender_email = "prathampshetty99sai@gmail.com"
-app_password = ""   # replace with app password
-filename = "./pratham_resume.pdf"
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+sender_email = os.getenv("SENDER_EMAIL")
+app_password = os.getenv("APP_PASSWORD")
+filename = os.getenv("FILENAME", "resume.pdf")
+
 
 subject = "Seeking Opportunity for Developer Role – Pratham P Shetty"
 
