@@ -9,7 +9,7 @@ from email import encoders
 from data import sender_email, app_password, subject, body, filename
 
 
-df = pd.read_csv("output.csv")
+df = pd.read_csv("hr_emails.csv")
 hr_emails = df.iloc[:, 2].dropna().tolist()   # clean list
 
 print("Total HR Emails Found:", len(hr_emails))
@@ -21,10 +21,10 @@ for receiver_email in hr_emails:
     # Create message
     msg = MIMEMultipart()
     msg["From"] = sender_email
-    msg["To"] = receiver_email
+    msg["To"] =  receiver_email
     msg["Subject"] = subject
 
-    msg.attach(MIMEText(body, "plain"))
+    msg.attach(MIMEText(body, "html"))
 
     # Attach resume
     with open(filename, "rb") as attachment:
