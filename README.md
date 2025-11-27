@@ -37,7 +37,7 @@ email_to_hr/
 
 ```bash
 git clone https://github.com/PrathamPShetty/bulk-email-to-hr.git
-cd email_to_hr
+cd bulk-email-to-hr
 ```
 
 ### 2. Set Up Virtual Environment
